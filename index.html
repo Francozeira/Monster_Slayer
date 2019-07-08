@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Monster Slayer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+
+      <div class="panel scores">
+        <div class="score">
+          <h1>Player</h1>
+          <div class="life_bar">
+						<label for="water">
+							<div class="fill_player" :class="{player_danger: player_life <20}"></div>
+						</label>
+          </div>
+          <h2>{{ player_life }}%</h2>
+        </div>
+
+        <div class="score">
+          <h1>Monster</h1>
+          <div class="life_bar">
+            <label for="water">
+							<div class="fill_monster" 
+								:class="{monster_danger: monster_life <20}"
+								v-bind:style="animation: grow_player 2s forwards;"
+							></div>
+            </label>
+          </div>
+          <h2>{{ monster_life }}%</h2>
+        </div>
+			</div>
+			
+      <div class="panel result"></div>
+      <div class="panel buttons"></div>
+      <div class="panel log"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
