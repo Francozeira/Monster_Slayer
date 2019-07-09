@@ -8,6 +8,7 @@ h1 {
   color: rgb(252, 110, 15);
 }
 
+/* FIRST PANEL */
 #app {
   display: flex;
   flex-direction: column;
@@ -17,6 +18,8 @@ h1 {
   padding: 1%;
   margin: 2%;
   box-shadow: 0 2px 10px rgb(224, 95, 9);
+  display: flex;
+  justify-content: center;
 }
 
 .scores {
@@ -33,99 +36,63 @@ h1 {
 
 .life_bar {
   width: 80%;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: -2px 0 10px 0 rgba(255, 255, 255, 0.6);
+  background-color: white
 }
 
 .life_bar .life {
   display: flex;
   justify-content: center;
   height: 100%;
-  width: 100%;
-  background-color: greenyellow;
+  width: 50%;
+  border-radius: 10px;
+  max-width: 100%;
 }
 
-@keyframes grow_player {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
+.playerNormal {
+  background: linear-gradient(to bottom, rgba(79, 206, 89, 0.836), rgba(13, 167, 26, 0.836)), 
+  url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/172299/bubbles-mask.gif);
 }
 
-@keyframes grow_monster {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 15%;
-  }
+.playerDanger {
+  background: linear-gradient(to bottom, rgba(204, 64, 64, 0.836), rgba(167, 13, 13, 0.836)), 
+  url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/172299/bubbles-mask.gif);
 }
 
-label {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 20px;
-  background: transparent;
-  border-radius: 0.4rem;
-  border: 2px solid white;
-  overflow: hidden;
-  box-shadow: -2px 0 8px 0 rgba(255, 255, 255, 0.6);
+.monsterNormal {
+  background: linear-gradient(to bottom,rgba(141, 5, 219, 0.795),rgba(161, 41, 230, 0.836)), 
+  url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/172299/bubbles-mask.gif);
 }
 
-label div:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/172299/bubbles-mask.gif);
-  mix-blend-mode: overlay;
-  opacity: 0.9;
+.monsterDanger {
+  background: linear-gradient( to bottom,rgba(42, 39, 223, 0.836),rgba(3, 1, 88, 0.836)), 
+  url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/172299/bubbles-mask.gif);
 }
 
+/* SECOND PANEL */
 
-.fill_player {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(79, 206, 89, 0.836),
-    rgba(13, 167, 26, 0.836)
-  );
-  height: 100%;
-  width: 0%;
-  box-shadow: 0 0 8px 1px white inset;
+.resultDiv {
+  display: flex;
+  justify-content: center;
 }
 
-.player_danger {
-  background: linear-gradient( to bottom,
-    rgba(204, 64, 64, 0.836),
-    rgba(167, 13, 13, 0.836)
-  );
+.win {
+  color: greenyellow
 }
 
-.fill_monster {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(141, 5, 219, 0.795),
-    rgba(161, 41, 230, 0.836)
-  );
-  height: 100%;
-  width: 0%;
-  animation: grow_monster 2s forwards;
-  box-shadow: 0 0 8px 1px white inset;
+.lose{
+  color: magenta
 }
 
-.monster_danger {
-  background: linear-gradient( to bottom,
-    rgba(42, 39, 223, 0.836),
-    rgba(3, 1, 88, 0.836)
-  );
+/* THIRD PANEL */
+
+.btn {
+  margin: 2% 8%;
+  padding: 10px;
+  font-family: "Mountains of Christmas", cursive;
+  font-size: 2em;
+  border-radius: 6em
 }

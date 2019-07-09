@@ -13,33 +13,51 @@
   <body>
     <div id="app">
 
+      <!-- FIRST PANEL -->
       <div class="panel scores">
         <div class="score">
-          <h1>Player</h1>
+          <h1
+          >Player</h1>
           <div class="life_bar">
-						<label for="water">
-							<div class="fill_player" :class="{player_danger: player_life <20}"></div>
-						</label>
+            <div class="life" :class="{playerDanger: playerLife <30 , playerNormal: playerLife =>30}"
+              :style="{width: playerLife + '%'}"            >
+            </div>
           </div>
-          <h2>{{ player_life }}%</h2>
+          <h2>{{ playerLife }}%</h2>
         </div>
 
         <div class="score">
           <h1>Monster</h1>
           <div class="life_bar">
-            <label for="water">
-							<div class="fill_monster" 
-								:class="{monster_danger: monster_life <20}"
-								v-bind:style="animation: grow_player 2s forwards;"
-							></div>
-            </label>
+            <div class="life" :class="{monsterDanger: monsterLife <30 , monsterNormal: monsterLife =>30}"
+              :style="{width: monsterLife + '%'}"            >
+            </div>
           </div>
-          <h2>{{ monster_life }}%</h2>
+          <h2>{{ monsterLife }}%</h2>
         </div>
 			</div>
-			
-      <div class="panel result"></div>
-      <div class="panel buttons"></div>
+      
+      <!-- SECOND PANEL -->
+      <div v-if="hasWinner" class="panel result">
+        <div v-if="monsterLife == 0" class="resultDiv">
+          <h1 class="win">You Win!</h1>
+        </div>
+
+        <div v-else class="resultDiv">
+          <h1 class="lose">You Lose!</h1>
+        </div>
+      </div>
+
+      <!-- THIRD PANEL -->
+      <div class="panel buttons">
+        <template v-if="onGame">
+          <button class="btn"><span>ESPADADA</span> </button>
+          <button class="btn"><span></span> SHAZAM!</button>
+          <button class="btn"><span></span> HEAL</button>
+          <button class="btn"><span></span> LARGAR OS BETS</button>
+        </template>
+        <button v-else class="btn">START!</button>
+      </div>
       <div class="panel log"></div>
     </div>
     <script src="app.js"></script>

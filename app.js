@@ -1,11 +1,15 @@
 new Vue ({
     el: '#app',
     data: {
-        player_life: 100,
-        monster_life: 25,
-        vai: true
+        onGame: true,
+        playerLife: 100,
+        monsterLife: 100,
     },
-    computed: {},
+    computed: {
+        hasWinner() {
+					return this.playerLife == 0 || this.monsterLife == 0
+        }
+    },
     methods: {
 
     },
