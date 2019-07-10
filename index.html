@@ -51,14 +51,16 @@
       <!-- THIRD PANEL -->
       <div class="panel buttons">
         <template v-if="onGame">
-          <button class="btn"><span>ESPADADA</span> </button>
-          <button class="btn"><span></span> SHAZAM!</button>
-          <button class="btn"><span></span> HEAL</button>
-          <button class="btn"><span></span> LARGAR OS BETS</button>
+          <button @click="attack(false)" class="btn attack">ESPADADA</button>
+          <button @click="attack(true)" class="btn specialAttack">FIREBALL</button>
+          <button class="btn heal">HEAL</button>
+          <button @click="resetGame()" class="btn quit">LARGAR OS BETS</button>
         </template>
-        <button v-else class="btn">START!</button>
+        <button v-else @click="onGame = true" class="btn start">START!</button>
       </div>
-      <div class="panel log"></div>
+      <div class="panel log">
+
+      </div>
     </div>
     <script src="app.js"></script>
   </body>

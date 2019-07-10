@@ -94,5 +94,42 @@ h1 {
   padding: 10px;
   font-family: "Mountains of Christmas", cursive;
   font-size: 2em;
-  border-radius: 6em
+  border-radius: 6em;
+  cursor: pointer;
 }
+
+.heal {
+  border: 2px solid white;
+  box-shadow: -2px 0 20px 0 rgba(255, 255, 255, 0.6);
+  background: radial-gradient( rgba(21, 223, 213, 0.932),rgba(3, 1, 88, 0.836));
+  color: white
+}
+
+.specialAttack {
+  border: 2px solid white;
+  box-shadow: -2px 0 20px 0 rgba(250, 41, 4, 0.747);
+  background: radial-gradient( rgba(233, 193, 62, 0.527),rgb(110, 3, 3));
+  color: yellow
+}
+
+.attack {
+  border: 2px solid greenyellow;
+  box-shadow: -2px 0 20px 0 rgba(204, 233, 101, 0.527);
+  background: radial-gradient( rgba(204, 233, 101, 0.527),rgba(55, 110, 3, 0.445));
+  color: greenyellow
+}
+
+.quit {
+  border: 2px solid white;
+  box-shadow: -2px 0 20px 0 magenta;
+  background: radial-gradient( navy,rgba(5, 63, 223, 0.836));
+  color: magenta;
+}
+
+.start {
+  border: 2px solid burlywood;
+  box-shadow: -2px 0 20px 0 whitesmoke;
+  background: white;
+  color: black;
+}
+
