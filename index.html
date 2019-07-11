@@ -53,13 +53,17 @@
         <template v-if="onGame">
           <button @click="attack(false)" class="btn attack">ESPADADA</button>
           <button @click="attack(true)" class="btn specialAttack">FIREBALL</button>
-          <button class="btn heal">HEAL</button>
+          <button @click="healAndHurt()" class="btn heal">HEAL</button>
           <button @click="resetGame()" class="btn quit">LARGAR OS BETS</button>
         </template>
-        <button v-else @click="onGame = true" class="btn start">START!</button>
+        <button v-else @click="startGame()" class="btn start">START!</button>
       </div>
-      <div class="panel log">
-
+      <div v-if="logs.length" class="panel log">
+        <ul>
+          <li v-for="log in logs" class="log" :class="log.cls">
+            {{log.text}}
+          </li>
+        </ul>
       </div>
     </div>
     <script src="app.js"></script>
