@@ -138,22 +138,24 @@ ul {
   display: flex;
   flex-direction: column;
   list-style: none;
+  width: 640px;
 }
 
 li {
-  display: flex;
+  display: inline;
   margin: 4px 0;
-  padding: 3px 0;
-  font-size: 2em;
+  padding: 3px 2%;
+  font-size: 1.5em;
   font-weight: 600;
   text-transform: capitalize;
   border-radius: 50px;
+
 }
 
 .player {
-
+  background-color: rgba(3, 117, 13, 0.25);
 }
 
 .monster {
-  
+  background-color: rgba(39, 3, 117, 0.25);
 }
